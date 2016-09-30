@@ -6,3 +6,11 @@
 
 
 </div>
+<div class="equipe">
+	<div class="cdp>">
+		<h3>Les Chefs de Projets</h3>
+	</div>
+	<div class="techos">
+		<h3>Les Techniciens</h3>
+	</div>
+</div>
