@@ -3,12 +3,12 @@
         
         <?php
 
-        echo '<li><a href="home.php">Accueil</a></li>';
+        echo '<a href="home.php"><li>Accueil</li></a>';
         if (isset($pseudo)) {
-            echo '<li><a href="admin.php">Espace admin</a></li>';
-            echo '<li><a href="?logout=true">Déconnexion</a></li>';
+            echo '<a href="admin.php"><li>Espace admin</li></a>';
+            echo '<a href="?logout=true"><li>Déconnexion</li></a>';
         }else{
-            echo '<li><a href="connexion.php">Se connecter</a></li>';
+            echo '<a href="connexion.php"><li>Se connecter</li></a>';
         }
         ?>      
         
