@@ -1,0 +1,146 @@
+body{
+    height:100%;
+    font-family: "Lato", sans-serif;
+    background: #76b852; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+    background: -moz-linear-gradient(right, #76b852, #8DC26F);
+    background: -o-linear-gradient(right, #76b852, #8DC26F);
+    background: linear-gradient(to left, #76b852, #8DC26F);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  }
+
+
+h1,h2,h3{
+    font-weight:300;
+    text-align: left;
+
+}
+.align-left{
+    text-align: left;
+}
+.container{
+    text-align:center;
+    margin:auto;
+    width:360px;
+    margin-top:5%;
+    padding:10px;
+    background: rgb(242, 242, 242);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding:10px 40px 20px 40px;
+
+}
+
+.big{
+    width:90%;
+    min-height:400px;
+    margin-top:0 !important;
+    text-align: left;
+}
+
+.big form{
+    text-align: left;
+    margin:0;
+}
+
+form{
+    max-width: 360px;
+    margin:auto;
+    font-size:1.2em;
+
+}
+
+.connect input{
+    height:40px;
+    background: #e4e4e4;
+    margin-top:15px;
+    box-shadow: none;
+    text-shadow: none;
+    padding-left:10px;
+    width:96%;
+
+}
+
+.connect-submit input{
+    height:40px;
+    background: #0aa22e;
+    padding-left:10px;
+    text-transform: uppercase;
+    width:100%;
+    color:white;
+    margin-bottom:0px !important;
+
+
+}
+input{
+    font-size:0.8em;
+
+    /*color:transparent !important;*/
+    text-shadow:none !important;
+    border:none !important;
+    box-shadow:none !important;
+}
+
+input:focus,
+ select:focus,
+ textarea:focus,
+ button:focus {
+     outline: none;
+ }
+
+ a{
+    color:black;
+    font-size:0.8em;
+}
+ 
+ .menu{
+     display: inline;
+     text-decoration: none;
+     text-align: right;
+     marign-right:5%;
+ }
+
+ li{
+     display:inline;
+ }
+ .entrees label{
+     font-weight: bold;
+ }
+
+
+ /*TABLE*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th{
+    text-align: left;
+    padding: 8px 0 8px 0;
+}
+td{
+    border-bottom: 1px solid black;
+    background: rgba(255, 255, 255, 0.73);
+
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.input-table{
+    width:100%;
+    cursor: pointer;
+
+    padding:5px 5px 5px 0;
+
+}
+
+
+
+
