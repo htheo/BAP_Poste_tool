@@ -14,9 +14,10 @@ if(isset($nom_page_accueil)){
             include 'blocs/accueil.php';
             break;
         case 'listing-projet.php':
-            include 'blocs/liste-projets.php';
+            $projets=db_select('SELECT * FROM projet_BAP');
+            include 'blocs/liste-projet.php';
             break;
-        case 'edit-projet-v.php':
+        case 'creer-projet.php':
             if(isset($pseudo)){ //si il est déjà co il peut créer un projet
                 include 'blocs/creer-projet.php';
             }                   //sinon il doit se connecter d'abord

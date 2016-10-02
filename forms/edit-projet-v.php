@@ -1,6 +1,6 @@
 <?php
 
-if(isset($pseudo)&&$level<=1){
+if(isset($pseudo) && $level<=1 || $_POST['nom']){
     if(isset($_GET['action'])){
 
         switch($_GET['action']){
@@ -38,8 +38,28 @@ if(isset($pseudo)&&$level<=1){
                             echo 'Validé ! <script>  window.location.href = "accueil.php";</script> <a href="accueil.php">Cliquez-ici pour valider</a>';
 
                         }else{
-                            $tab_alerte['error']= "Problème lors de l'insertion";
-                            include 'blocs/erreur.php';
+                            if(isset($_POST['mail']) && $_POST['password']){
+                                $nom=htmlentities($_POST['nom']);
+                                $prenom=htmlentities($_POST['prenom']);
+                                $mail=htmlentities($_POST['mail']);
+                                $password=htmlentities($_POST['password']);
+                                $admin=1;
+                                echo '<br><br><br><br>coucou';
+
+                                $user_insert=db_insert('users_bap', array('nom'=>$nom,'prenom'=>$prenom,'mail'=>$mail,'password'=>$password, 'admin'=>$admin, 'id_projet'=>$insert));
+                                if($user_insert>0) {
+                                    $_SESSION['pseudo'] = $mail;
+                                    $_SESSION['level'] = $admin;
+                                    $_SESSION['id'] = $user_insert;
+                                    echo 'Validé ! <script>  window.location.href = "accueil.php";</script> <a href="accueil.php">Vous êtes bien connecté</a>';
+
+                                }
+
+                            }else{
+                                $tab_alerte['error']= "Problème lors de l'insertion";
+                                include 'blocs/erreur.php';
+                            }
+
                         }
                     }else{
                     $tab_alerte['error']= "Problème lors de l'insertion";

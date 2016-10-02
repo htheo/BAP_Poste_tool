@@ -15,7 +15,7 @@ if(isset($pseudo) && isset($password)){
                 $pseudo=htmlentities($_POST['pseudo']);
                 $mdp=htmlentities($_POST['password']);
                 $password=md5($mdp);
-                $id=db_insert('users_bap', array('mail'=>$pseudo, 'password'=>$password, 'admin'=>'3'));
+                $id=db_insert('users_bap', array('mail'=>$pseudo, 'password'=>$password, 'admin'=>'4'));
                 if(isset($id)){ 
 
                     echo '

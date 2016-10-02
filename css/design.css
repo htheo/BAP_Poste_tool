@@ -161,6 +161,65 @@ th {
     background-color: rgba(255,255,255,0.1);
 }
 
+            /* listing projets */
+
+.listing_projet {
+
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.bandeau_projet {
+    transform:scale(1.2,1);
+    margin-top: 1px;
+
+
+}
+.projet {
+
+    height:300px;
+    float:left;
+    width:70%;
+    transform:skew(-25deg);
+    overflow:hidden;
+    margin-top: 5px;
+    background-color: rgb(253,253,253);
+}
+.projet_mini {
+
+    margin-top: 5px;
+    height:300px;
+    float:left;
+    width:30%;
+    transform:skew(-25deg);
+    overflow:hidden;
+
+
+
+}
+.background_projet_mini {
+    height: 100%;
+    width: 100%;
+    background:url('../img/laposte.jpg');
+    background-position: center center;
+    background-size: cover;
+    transform:skew(25deg) scale(0.8,1);
+    transform-origin: top left;
+    padding:0 20% 0 5%;
+}
+
+.contenu_projet_mini {
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    transform:skew(25deg) scale(0.8,1);
+    transform-origin: top left;
+    padding:0 20% 0 5%;
+
+}
+
+
                 /* Home Poste */
 
 .home_poste {

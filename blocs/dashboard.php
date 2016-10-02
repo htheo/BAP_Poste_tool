@@ -7,14 +7,14 @@
         $tab_alerte['error'] = "Vous n'avez pas les droits" ;
         include 'blocs/erreur.php';
     }else{
-        echo '<h1>Bienvenue <b>'.$pseudo.'</b></h1>';
+        echo '<h1>Bienvenue</h1>';
         echo '<hr>';
        echo  '<p>Vous pourrez gérer ici vos horaires et autres textes de votre site.</p>';
         // On récupère les posts existants
 
 
         if($level==1){
-            $users = db_select('SELECT * FROM users_bap');
+            $users = db_select('SELECT * FROM users_bap WHERE  id_projet='.$donnees_projet[0]["id"]);
             include 'forms/edit-table-users.php';
 
             $rows = db_select('SELECT * FROM posts');

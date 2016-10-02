@@ -38,7 +38,7 @@ echo '
                 <input type="text" name="prenom" placeholder="Prénom"></td>
                  <td><input type="mail" name="mail" placeholder="Mail"></td>
                 <td><input type="text" name="role" placeholder="Role"></td>
-                <td><input type="text" name="level" placeholder="1=admin 2=admin 3=user"></td>
+                <td><input type="text" name="level" placeholder="1=admin 2=intervenant 3=techos"></td>
                 <td><input type="submit" value="Ajouter l\'utilisateur"><td>
             </form>
         </tr>';

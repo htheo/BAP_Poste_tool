@@ -119,6 +119,6 @@ function erreur($err='')
 //se deconnecter
 if(isset($_GET['logout'])&&$_GET['logout']==true){
 	session_destroy();
-	header('Location: home.php');
+	header('Location: accueil.php');
 }
 ?>

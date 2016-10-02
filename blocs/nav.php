@@ -3,7 +3,7 @@
         
         <?php
 
-        echo '<a href="'.$niveau_url.'home.php"><li>Accueil</li></a>';
+        echo '<a href="'.$niveau_url.'accueil.php"><li>Accueil</li></a>';
         echo '<a href="'.$niveau_url.'listing-projet.php"><li>Les projets BAP</li></a>';
         if (isset($pseudo)) {
             echo '<a href="'.$niveau_url2.'home/compte-rendu.php"><li>Compte rendu</li></a>';
