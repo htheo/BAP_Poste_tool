@@ -7,6 +7,7 @@
     ?>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <?php
         echo '<link rel="stylesheet" media="screen" type="text/css" title="Design" href="'.$niveau_url.'css/design.css" />';
     ?>

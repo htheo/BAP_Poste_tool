@@ -1,9 +1,10 @@
 <?php
 if(isset($donnees_projet[0])){
+	$name_route=toRoute($donnees_projet[0]['name']);
 
 
-?>
 
+	?>
 <div class="home_poste">
 
     <?php
@@ -57,6 +58,11 @@ if(isset($donnees_projet[0])){
 </div>
 
 <?php
-
+	if(is_file('img/'.$name_route.'.jpg')){
+		echo '<script>
+		$(".home_poste").css("background-image", "url('.$niveau_url.'img/'.$name_route.'.jpg)");
+		console.log("'.$niveau_url.'img/'.$name_route.'.jpg");
+	</script>';
+	}
 
 }
