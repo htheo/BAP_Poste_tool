@@ -1,7 +1,7 @@
 <?php
 if(isset($pseudo) && isset($password)){
 
-	$data=db_select('SELECT * FROM users WHERE useradmin="'.$pseudo.'"');
+	$data=db_select('SELECT * FROM users_bap WHERE mail="'.$pseudo.'"');
         if (isset($data[0])) // Acces OK !
         {
 
@@ -15,11 +15,12 @@ if(isset($pseudo) && isset($password)){
                 $pseudo=htmlentities($_POST['pseudo']);
                 $mdp=htmlentities($_POST['password']);
                 $password=md5($mdp);
-                $id=db_insert('users', array('useradmin'=>$pseudo, 'password'=>$password, 'admin'=>'3'));
+                $id=db_insert('users_bap', array('mail'=>$pseudo, 'password'=>$password, 'admin'=>'3'));
                 if(isset($id)){ 
 
-                    echo 'Inscription réussi veuillez vous connecter';
                     echo '
+                <div class="connection">
+                <h1>Inscription réussi veuillez vous connecter</h1>
                     <form method="post" action="home.php?panel=connexion">
                         <p class="connect">
                         <label for="pseudo"></label><input autofocus value="'.$pseudo.'" name="pseudo" type="text" id="pseudo" /><br />
@@ -27,7 +28,8 @@ if(isset($pseudo) && isset($password)){
 
                         </p>
                         <p class="connect-submit"><input type="submit" value="Connexion" /></p>
-                    </form>';
+                    </form>
+                    </div>div>';
 
                 }else{
                     $tab_alerte['error']="Problème lors de l'insertion";

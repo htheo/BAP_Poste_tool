@@ -102,7 +102,14 @@ function db_select($sql, $tab_valeurs='', $debug=false, $optnum=''){
 	return $donnees;
 	}
 
-
+function toRoute($name){
+	$route=str_replace(" ","-",$name);
+	return $route;
+}
+function routeToName($route){
+	$name=str_replace("-"," ",$route);
+	return $name;
+}
 function erreur($err='')
 {
     $mess=($err!='')? $err:'Une erreur inconnue s\'est produite';

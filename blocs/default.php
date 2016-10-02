@@ -1,16 +1,62 @@
+<?php
+if(isset($donnees_projet[0])){
+
+
+?>
+
 <div class="home_poste">
 
+    <?php
+        echo '<h1>BAP '.$donnees_projet[0]['name'].'</h1>';
+        echo '<h2>'.$donnees_projet[0]['brief'].'</h2>';
 
-	<h1>BAP La Poste R&D</h1>
-	<h2>Ubérisation de la distribution de courrier</h2>
+
+    ?>
+
 
 
 </div>
+
 <div class="equipe">
-	<div class="cdp>">
-		<h3>Les Chefs de Projets</h3>
+
+		<h2>Les Chefs de Projets</h2>
+	<div class="ligne_worker">
+		<?php
+			foreach ($cdps as $cdp){
+				echo '<div class="equipier">';
+				echo'	<img src="'.$niveau_url.'img/cdp.svg" alt="logo chef de projet">';
+				echo '	<h4>'.$cdp["nom"].' '.$cdp["prenom"].'</h4>';
+				if($cdp["role"] != ""){
+					echo '	<p>'.$cdp["role"].'</p>';
+				}else{
+					echo '	<p>CDP</p>';
+				}
+
+				echo '</div>';
+			}
+		?>
 	</div>
-	<div class="techos">
-		<h3>Les Techniciens</h3>
+
+		<h2>Les Techniciens</h2>
+	<div class="ligne_worker">
+		<?php
+		foreach ($techniciens as $technicien){
+			echo '<div class="equipier">';
+			echo'	<img src="'.$niveau_url.'img/boy.svg" alt="logo techos">';
+			echo '	<h4>'.$technicien["nom"].' '.$technicien["prenom"].'</h4>';
+			if($technicien["role"] != ""){
+				echo '	<p>'.$technicien["role"].'</p>';
+			}else{
+				echo '	<p>Technicien</p>';
+			}
+
+			echo '</div>';
+		}
+		?>
 	</div>
 </div>
+
+<?php
+
+
+}

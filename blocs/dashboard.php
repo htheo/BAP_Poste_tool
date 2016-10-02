@@ -14,7 +14,7 @@
 
 
         if($level==1){
-            $users = db_select('SELECT * FROM users');
+            $users = db_select('SELECT * FROM users_bap');
             include 'forms/edit-table-users.php';
 
             $rows = db_select('SELECT * FROM posts');

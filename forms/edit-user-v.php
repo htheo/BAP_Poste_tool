@@ -7,11 +7,14 @@ if($acces==true && $level='1'){
 
 
 			case 'update':
-				if(isset($_POST['updatepseudo']) AND isset($_POST['updatelevel'])){
+				if(isset($_POST['updatemail']) AND isset($_POST['updatelevel'])){
 					$id = htmlentities($_POST['id']);
-		            $pseudo = htmlentities($_POST['updatepseudo']);
+		            $mail = htmlentities($_POST['updatemail']);
+                    $nom = htmlentities($_POST['updatenom']);
+                    $prenom = htmlentities($_POST['updateprenom']);
 		            $level = htmlentities($_POST['updatelevel']);
-		            $update = db_update('users', array('useradmin'=>$pseudo, 'admin'=>$level), array('id'=>$id));
+                    $role = htmlentities($_POST['updaterole']);
+		            $update = db_update('users_bap', array('mail'=>$mail, 'prenom'=> $prenom, 'nom'=>$nom, 'admin'=>$level, 'role'=>$role), array('id'=>$id));
 			        if(isset($update)){
 			            echo 'Validé ! <script>  window.location.href = "admin.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
 		            }else{
@@ -24,10 +27,13 @@ if($acces==true && $level='1'){
 
 				break;
 			case 'insert':
-				if(isset($_POST['pseudo']) AND isset($_POST['level'])){
-		            $pseudo = htmlentities($_POST['pseudo']);
+				if(isset($_POST['mail']) AND isset($_POST['level'])){
+		            $mail = htmlentities($_POST['mail']);
+                    $nom = htmlentities($_POST['nom']);
+                    $prenom = htmlentities($_POST['prenom']);
 		            $level = htmlentities($_POST['level']);
-		            $insert = db_insert('users', array('useradmin'=>$pseudo, 'admin'=>$level));
+                    $role = htmlentities($_POST['role']);
+		            $insert = db_insert('users_bap', array('mail'=>$mail, 'prenom'=> $prenom, 'nom'=>$nom, 'admin'=>$level, 'role'=>$role));
 			        if(isset($insert)){
 			            echo 'Validé ! <script>  window.location.href = "admin.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
 		            }else{
@@ -39,7 +45,8 @@ if($acces==true && $level='1'){
 
 
 			default:
-				echo 'dommage';
+                $tab_alerte['error']= "Problème lors de l'insertion";
+                include 'blocs/erreur.php';
 				break;
 		}
 	}

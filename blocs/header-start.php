@@ -7,8 +7,10 @@
     ?>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <?php
+        echo '<link rel="stylesheet" media="screen" type="text/css" title="Design" href="'.$niveau_url.'css/design.css" />';
+    ?>
 
-    <link rel="stylesheet" media="screen" type="text/css" title="Design" href="css/design.css" />
 </head>
 <!-- CE SITE A BESOIN DE JAVASCRIPT POUR FONCTIONNER CORRECTEMENT-->
 <body>
