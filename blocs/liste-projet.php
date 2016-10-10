@@ -15,7 +15,7 @@
             </div>';
         echo '<div class="projet">
                     <div class="contenu_projet_mini">
-                        <a href="BAP-tools/'.$name_route.'/"><h2>'.$projet['name'].'</h2></a>
+                        <a href="BAP_Poste_tool/'.$name_route.'/"><h2>'.$projet['name'].'</h2></a>
                         <p>'.$projet['brief'].'</p>
                     </div>
         
@@ -30,7 +30,7 @@
         }
         echo '<script>
             $(".'.$name_route.'2").on("click", function(){
-                window.location.href = "BAP-tools/'.$name_route.'/";
+                window.location.href = "BAP_Poste_tool/'.$name_route.'/";
             });
         </script>';
     }

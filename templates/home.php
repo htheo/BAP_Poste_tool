@@ -21,6 +21,9 @@ include 'blocs/nav.php';
                     include 'blocs/erreur.php';
                 }
                 break;
+            case 'suivi-projet.php':
+                include 'blocs/suivi-projet.php'
+                break;
             default:
                 $tab_alerte['error']="Page inexistante";
                 include 'blocs/erreur.php';
