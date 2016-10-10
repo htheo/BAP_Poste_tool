@@ -165,7 +165,7 @@ th {
 
 .listing_projet {
 
-    padding-top: 5%;
+    padding-top: 7%;
     width: 100%;
     text-align: center;
     overflow: hidden;
@@ -231,7 +231,14 @@ th {
     padding:0 20% 0 5%;
 
 }
-
+                /* liste des cycles */
+.cycle {
+    border: 1px solid black;
+    padding: 2%;
+    width:60%;
+    margin: 1% auto 1% auto;
+    text-align: left;
+}
 
                 /* Home Poste */
 

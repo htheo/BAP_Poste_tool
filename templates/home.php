@@ -29,6 +29,8 @@ include 'blocs/nav.php';
                             include 'blocs/start-projet.php';
                             break;
                         case 'en_cours':
+                            $select_cycles_fini=db_select('SELECT * FROM cycles_bap WHERE statut="fini" && id_projet='.$donnees_projet[0]["id"]);
+                            $select_cycles_en_cours=db_select('SELECT * FROM cycles_bap WHERE statut="en_cours" && id_projet='.$donnees_projet[0]["id"]);
                             include 'blocs/en-cours-projet.php';
                             break;
                         case 'recettage':

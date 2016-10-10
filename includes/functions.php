@@ -174,4 +174,25 @@ function get_technicien_from_projet($id_projet){
 
 	return $users;
 }
+function get_competences(){
+	$competences=db_select('SELECT * FROM competences');
+	return $competences;
+}
+function get_competences_from_cycle($id_cycle){
+	$id_competences=db_select('SELECT id_competence FROM link_cycle_competence WHERE id_cycle='.$id_cycle);
+	$competences=array();
+	foreach ($id_competences as $id_competence){
+		$name_competence=db_select('SELECT * FROM competences WHERE id='.$id_competence["id_competence"]);
+		$competences[]=$name_competence[0]['name'];
+	}
+	return $competences;
+}
+function get_taches_from_cycle($id_cycle){
+	$id_taches=db_select('SELECT * FROM taches WHERE id_cycle='.$id_cycle);
+	$taches=array();
+	foreach ($id_taches as $id_tache){
+		$taches[]=$id_tache["name"];
+	}
+	return $taches;
+}
 ?>
