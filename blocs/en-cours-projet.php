@@ -1,14 +1,14 @@
 <?php
 if(isset($pseudo) && isset($donnees_projet[0])){
 echo '<div class="listing_projet">
-<h1>Liste des cycles</h1>';
+<h1>Pojet en développement - Liste des cycles</h1>';
 // on récupère les cycle et on les affiche et on peut les modifier
 
     if(isset($select_cycles_fini[0])){ //si il y a des cycles finis
         foreach ($select_cycles_fini as $select_cycle_fini){
             $competences_cycle_fini=get_competences_from_cycle($select_cycle_fini["id"]);
             $taches_cycle_fini=get_taches_from_cycle($select_cycle_fini["id"]);
-            echo '<div class="cycle">
+            echo '<div class="cycle cycle_fini">
             <h2>'.$select_cycle_fini["name"].' - '.$select_cycle_fini["date_debut"].' '.$select_cycle_fini["date_fin"].'</h2>
             <p>'.$select_cycle_fini["resume"].'</p>
             <h3>Compétences : </h3><p>';

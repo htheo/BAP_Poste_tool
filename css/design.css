@@ -238,6 +238,11 @@ th {
     width:60%;
     margin: 1% auto 1% auto;
     text-align: left;
+    overflow-y: scroll;
+}
+.cycle_fini {
+
+    max-height: 200px;
 }
 
                 /* Home Poste */
