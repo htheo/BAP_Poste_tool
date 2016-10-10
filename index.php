@@ -6,6 +6,7 @@ include 'includes/config.php';
 include 'includes/functions.php';
 
 $url_barre=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];  //on récupère toutes les données
+
 $tab_url_barre=explode('/',$url_barre);    // on les sépare dans un tableau avec les "/"
 $i=0;
 $nom_domaine=false;   //pour trouver le nom de domaine

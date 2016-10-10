@@ -44,7 +44,6 @@ if(isset($pseudo) && $level<=1 || $_POST['brief']){
                                 $mail=htmlentities($_POST['mail']);
                                 $password=htmlentities($_POST['password']);
                                 $admin=1;
-                                echo '<br><br><br><br>coucou';
 
                                 $user_insert=db_insert('users_bap', array('nom'=>$nom,'prenom'=>$prenom,'mail'=>$mail,'password'=>$password, 'admin'=>$admin, 'id_projet'=>$insert));
                                 if($user_insert>0) {
