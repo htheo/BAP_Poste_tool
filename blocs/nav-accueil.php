@@ -20,6 +20,7 @@
             echo '<a href="'.$niveau_url.'listing-projet.php"><li>Les projets BAP</li></a>';
             echo '<a href="'.$niveau_url.'creer-projet.php"><li>Créer un projet</li></a>';
             echo '<a href="'.$niveau_url.'connexion.php"><li>Se connecter</li></a>';
+            echo '<a href="'.$niveau_url.'inscription.php"><li>S\'inscrire</li></a>';
         }
         ?>
 
