@@ -30,12 +30,15 @@ if(isset($pseudo) && $level<=3){
                 if(isset($_POST['name']) AND isset($_POST['resume'])){
                     $name=htmlentities($_POST['name']);
                     $resume=htmlentities($_POST['resume']);
+                    $important=htmlentities($_POST['important']);
+                    $positif=htmlentities($_POST['positif']);
+                    $negatif=htmlentities($_POST['negatif']);
                     $date_debut=htmlentities($_POST['date_fin']);
                     $date_fin=htmlentities($_POST['date_fin']);
                     $competences=$_POST['competence'];
                     $taches=$_POST['tache'];
                     $id_projet=htmlentities($_POST['id_projet']);
-                    $id_cycle=db_insert('cycles_bap', array('id_projet' => $id_projet,'name'=>$name, 'resume'=>$resume, 'date_debut'=>$date_debut, 'date_fin'=>$date_fin));
+                    $id_cycle=db_insert('cycles_bap', array('id_projet' => $id_projet,'important' => $important, 'negatif'=>$negatif, 'positif'=> $positif,'name'=>$name, 'resume'=>$resume, 'date_debut'=>$date_debut, 'date_fin'=>$date_fin));
 
                     if($id_cycle>0){
                         foreach ($competences as $competence){

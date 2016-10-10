@@ -240,9 +240,45 @@ th {
     text-align: left;
     overflow-y: scroll;
 }
+.cycle img {
+    height: 2em;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 2%;
+    padding-left: 5%;
+}
+.competence {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+}
 .cycle_fini {
 
     max-height: 200px;
+}
+.cycle_en_cours {
+    border: 2px solid #5474FF;
+}
+.important {
+    border: 2px solid #ff7d79;
+}
+.bandeau_cycle {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.bandeau_cycle h1 {
+    margin: 0 2% 0 2%;
+}
+.rotate {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+.bandeau_cycle img {
+    height: 1.8em;
+
 }
 
                 /* Home Poste */
@@ -311,7 +347,7 @@ th {
 }
 .menu2 a {
     color: black;
-    padding: 5%;
+    padding: 2% 5% 2% 5%;
 }
 
 .menu2 ul {

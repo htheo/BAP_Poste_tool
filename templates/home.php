@@ -5,6 +5,15 @@ include 'blocs/nav.php';
 
 
     if(isset($donnees_url)){
+        if(isset($id)){
+            $id_user_admin=db_select('SELECT role FROM link_projet_user WHERE id_projet='.$donnees_projet[0]['id'].' && id_user='.$id);
+
+            if(isset($id_user_admin[0])){
+                $level=$id_user_admin[0]['role'];
+            }
+        }
+
+
         switch ($donnees_url){
             case 'compte-rendu.php':
                 if($level<=3){
@@ -20,6 +29,12 @@ include 'blocs/nav.php';
                     $tab_alerte['error']="Vous n'avez pas le droits";
                     include 'blocs/erreur.php';
                 }
+                break;
+            case 'start-projet.php':
+                include 'blocs/start-projet.php';
+                break;
+            case 'projet-en-cours.php':
+                include 'blocs/en-cours-projet.php';
                 break;
             case 'suivi-projet.php':
                 if($level<=3){

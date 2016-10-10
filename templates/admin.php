@@ -7,9 +7,7 @@ include 'blocs/nav.php';
 
 if (isset($_SESSION['pseudo'])){
 	$acces=true;
-	
 
-	
     if(isset($_GET['panel'])){
     	switch($_GET['panel']){
     		case 'edit-posts':
