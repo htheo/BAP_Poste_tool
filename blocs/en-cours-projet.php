@@ -76,10 +76,10 @@ echo '<div class="listing_projet">
         $competences_cycle_fini=get_competences_from_cycle($select_cycle_en_cours["id"]);
         $taches_cycle_fini=get_taches_from_cycle($select_cycle_en_cours["id"]);
 
-        echo '<div class="cycle cycle_en_cours">'.date("d-m-Y", strtotime($select_cycle_en_cours["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_en_cours["date_fin"])).'</h2>
+        echo '<div class="cycle cycle_en_cours"><h2>'.$select_cycle_en_cours["name"].' - '.date("d-m-Y", strtotime($select_cycle_en_cours["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_en_cours["date_fin"])).'</h2>
             <p>'.$select_cycle_en_cours["resume"].'</p>';
             if($select_cycle_en_cours["important"]!=""){
-                echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p><br>';
+                echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["important"].'</p><br>';
             }
         if($level==1){
             if($select_cycle_en_cours["positif"]!=""){
@@ -104,13 +104,16 @@ echo '<div class="listing_projet">
             echo '<div class=""><img src="../../img/tache.svg" alt="icone de taches"><p class="competence">'.$value_tache_cycle_fini.'</p> </div>';
         }
 
-        echo '
+        if($level==1){
+            echo '
             <form action="../admin.php?action=validation&panel=edit-cycle" method="post">
                 <input type="hidden" name="id_cycle" value="'.$select_cycle_en_cours["id"].'">
                 <input type="submit" value="Valider le cycle">
-            </form>
+            </form>';
+        }
+
                
-        </div>
+        echo '</div>
         <div class="statut statut_en_cours">
            <h4>Ce cycle est en cours</h4>
         </div>';
