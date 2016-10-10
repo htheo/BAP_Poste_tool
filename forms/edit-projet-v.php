@@ -1,6 +1,6 @@
 <?php
 
-if(isset($pseudo) && $level<=1 || $_POST['nom']){
+if(isset($pseudo) && $level<=1 || $_POST['brief']){
     if(isset($_GET['action'])){
 
         switch($_GET['action']){
@@ -34,7 +34,7 @@ if(isset($pseudo) && $level<=1 || $_POST['nom']){
                     $insert = db_insert('projet_bap', array('name'=>$name, 'brief'=>$brief));
                     if(isset($insert)){
                         if(isset($id)){
-                            db_update('users_bap', array('id_projet'=>$insert),array('id'=>$id));
+                            db_insert('link_projet_user', array('id_projet'=>$insert, 'role'=>1, 'id_user'=>$id));
                             echo 'Validé ! <script>  window.location.href = "accueil.php";</script> <a href="accueil.php">Cliquez-ici pour valider</a>';
 
                         }else{
@@ -51,6 +51,8 @@ if(isset($pseudo) && $level<=1 || $_POST['nom']){
                                     $_SESSION['pseudo'] = $mail;
                                     $_SESSION['level'] = $admin;
                                     $_SESSION['id'] = $user_insert;
+
+                                    db_insert('link_projet_user', array('id_user'=>$user_insert, 'id_projet'=>$insert, 'role'=>1));
                                     echo 'Validé ! <script>  window.location.href = "accueil.php";</script> <a href="accueil.php">Vous êtes bien connecté</a>';
 
                                 }

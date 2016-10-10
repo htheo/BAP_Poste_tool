@@ -1,4 +1,7 @@
 <?php
+
+
+
 /**
  * Created by PhpStorm.
  * User: hinfraytheo
@@ -16,6 +19,7 @@ echo '<h2>Les utilisateurs existants sur la BAP</h2>
                                     <th>Niveau de profil</th>
                                     <th>Valider</th>
                                 </tr>';
+
 foreach($users as $user){
     echo '
                                 <tr>
@@ -24,25 +28,28 @@ foreach($users as $user){
                                     <td><input name="updatenom" class="input-table" value="'.$user['nom'].'">
                                     <input name="updateprenom" class="input-table" value="'.$user['prenom'].'"></td>
                                     <td><input name="updatemail" type="mail" class="input-table" value="'.$user['mail'].'"></td>
-                                    <td><input name="updaterole" class="input-table" value="'.$user['role'].'"></td>
-                                    <td><input name="updatelevel" class="input-table" value="'.$user['admin'].'"></td>
+                                    <td><input name="updaterole" class="input-table" value="'.$user['metier'].'"></td>
+                                    <td><input name="updatelevel" class="input-table" value="'.$user['role_bap'].'"></td>
                                     <td><button type="submit"/>Modifier</td>
                                     </form>
                                 </tr>';
 }
 echo '
         <tr>
-            <form action="admin.php?action=insert&panel=edit-users" method="post">
+            <form action="admin.php?action=insert_cdp&panel=edit-users" method="post">
                 <td>id</td>
                 <td><input type="text" name="nom" placeholder="Nom">
                 <input type="text" name="prenom" placeholder="Prénom"></td>
                  <td><input type="mail" name="mail" placeholder="Mail"></td>
                 <td><input type="text" name="role" placeholder="Role"></td>
                 <td><input type="text" name="level" placeholder="1=admin 2=intervenant 3=techos"></td>
+                <input type="hidden" value="'.$donnees_projet[0]['id'].'" name="id_bap">
                 <td><input type="submit" value="Ajouter l\'utilisateur"><td>
+                
             </form>
         </tr>';
 echo '</table>
                     <br>';
+
 
 

@@ -182,6 +182,11 @@ th {
 .bandeau_projet:hover .projet {
     background-color: rgb(250,250,250);
 }
+.bandeau_projet:hover .background_projet_mini {
+    -webkit-box-shadow: inset 0px 0px 200px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 200px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 200px 0px rgba(0,0,0,0.75);
+}
 .projet {
 
     height:300px;
@@ -214,6 +219,7 @@ th {
     transform:skew(25deg) scale(0.8,1);
     transform-origin: top left;
     padding:0 20% 0 5%;
+    transition-duration: 1s;
 }
 
 .contenu_projet_mini {
@@ -276,10 +282,27 @@ th {
 }
 .menu a {
     color: black;
-    padding: 5%;
+    padding: 2%;
 }
 
 .menu ul {
+    width: 100%;
+}
+.menu2 {
+    display: flex;
+    position: fixed;
+    background-color: rgb(245,245,245);
+    width: 100%;
+    top:6%;
+    z-index: 20;
+
+}
+.menu2 a {
+    color: black;
+    padding: 5%;
+}
+
+.menu2 ul {
     width: 100%;
 }
 

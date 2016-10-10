@@ -1,6 +1,7 @@
 <?php
 
 include 'blocs/header-start.php';
+include 'blocs/nav-accueil.php';
 include 'blocs/nav.php';
 
 

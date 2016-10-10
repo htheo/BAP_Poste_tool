@@ -47,8 +47,8 @@ if(isset($_SESSION['pseudo']) && isset($_SESSION['id']) && isset($_SESSION['leve
     $level = $_SESSION['level'];
 
     //on récupère le projet de la personne connecté
-    $id_projet=db_select('SELECT id_projet FROM users_BAP WHERE id='.$id);
-    if($id_projet>0){
+    $id_projet=db_select('SELECT id_projet, role FROM link_projet_user WHERE id_user='.$id);
+    if(isset($id_projet[0])){
         $users_projet=db_select('SELECT * FROM projet_bap WHERE id='.$id_projet[0]['id_projet']);
         if(isset($users_projet[0])){
             $name_projet=$users_projet[0]['name'];
@@ -63,7 +63,6 @@ if($nom_projet!=""){   // si il y a un nom de projet
 
 
     if(isset($donnees_projet[0])){   // si il y a un projet à ce nom
-
         if (empty($nom_page)){
 
             $nom_page='home.php';

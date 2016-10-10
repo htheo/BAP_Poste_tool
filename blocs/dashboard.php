@@ -13,8 +13,9 @@
         // On récupère les posts existants
 
 
-        if($level==1){
-            $users = db_select('SELECT * FROM users_bap WHERE  id_projet='.$donnees_projet[0]["id"]);
+        if(isset($pseudo) && isset($donnees_projet[0])){
+            $users= get_users_from_projet($donnees_projet[0]['id']);
+
             include 'forms/edit-table-users.php';
 
             $rows = db_select('SELECT * FROM posts');

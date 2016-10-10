@@ -1,5 +1,6 @@
 <?php
 include 'blocs/header-start.php';
+include 'blocs/nav-accueil.php';
 include 'blocs/nav.php';
 
 
@@ -55,8 +56,8 @@ include 'blocs/nav.php';
 
             default:
                 if(isset($donnees_projet[0])) {
-                    $cdps = db_select('SELECT * FROM users_bap WHERE admin=1 && id_projet=' . $donnees_projet[0]["id"]);
-                    $techinciens = db_select('SELECT * FROM users_bap WHERE admin=3 && id_projet=' . $donnees_projet[0]["id"]);
+                    $cdps = get_cdp_from_projet($donnees_projet[0]['id']);
+                    $techniciens = get_technicien_from_projet($donnees_projet[0]['id']);
                     include 'blocs/default.php';
 
                     if ($level <= 3) {
@@ -70,8 +71,8 @@ include 'blocs/nav.php';
         }
     }else{
         if(isset($donnees_projet[0])) {
-            $cdps = db_select('SELECT * FROM users_bap WHERE admin=1 && id_projet='.$donnees_projet[0]["id"]);
-            $techniciens = db_select('SELECT * FROM users_bap WHERE admin=3 && id_projet='.$donnees_projet[0]["id"]);
+            $cdps = get_cdp_from_projet($donnees_projet[0]['id']);
+            $techniciens = get_technicien_from_projet($donnees_projet[0]['id']);
             include 'blocs/default.php';
 
             if($level<=3){

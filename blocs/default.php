@@ -27,8 +27,8 @@ if(isset($donnees_projet[0])){
 				echo '<div class="equipier">';
 				echo'	<img src="'.$niveau_url.'img/cdp.svg" alt="logo chef de projet">';
 				echo '	<h4>'.$cdp["nom"].' '.$cdp["prenom"].'</h4>';
-				if($cdp["role"] != ""){
-					echo '	<p>'.$cdp["role"].'</p>';
+				if($cdp["metier"] != ""){
+					echo '	<p>'.$cdp["metier"].'</p>';
 				}else{
 					echo '	<p>CDP</p>';
 				}
@@ -45,8 +45,8 @@ if(isset($donnees_projet[0])){
 			echo '<div class="equipier">';
 			echo'	<img src="'.$niveau_url.'img/boy.svg" alt="logo techos">';
 			echo '	<h4>'.$technicien["nom"].' '.$technicien["prenom"].'</h4>';
-			if($technicien["role"] != ""){
-				echo '	<p>'.$technicien["role"].'</p>';
+			if($technicien["metier"] != ""){
+				echo '	<p>'.$technicien["metier"].'</p>';
 			}else{
 				echo '	<p>Technicien</p>';
 			}

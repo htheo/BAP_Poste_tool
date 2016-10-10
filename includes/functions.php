@@ -121,4 +121,57 @@ if(isset($_GET['logout'])&&$_GET['logout']==true){
 	session_destroy();
 	header('Location: accueil.php');
 }
+function get_users_from_projet($id_projet){
+	$id_users = db_select('SELECT id_user, metier, role FROM link_projet_user WHERE id_projet='.$id_projet);
+	$users=array();
+
+	foreach ($id_users as $id_user){
+		$cdps=db_select('SELECT * FROM users_bap WHERE id='.$id_user['id_user']);
+		foreach ($cdps as $user){
+			$id_cdp=$user["id"];
+			$users[$id_cdp]=$user;
+			$users[$id_cdp]['metier']=$id_user['metier'];
+			$users[$id_cdp]['role_bap']=$id_user['role'];
+
+		}
+
+	}
+
+
+	return $users;
+}
+function get_cdp_from_projet($id_projet){
+	$id_users = db_select('SELECT id_user, metier FROM link_projet_user WHERE role=1 && id_projet='.$id_projet);
+	$users=array();
+
+	foreach ($id_users as $id_user){
+		$cdps=db_select('SELECT * FROM users_bap WHERE id='.$id_user['id_user']);
+		foreach ($cdps as $user){
+			$id_cdp=$user["id"];
+			$users[$id_cdp]=$user;
+			$users[$id_cdp]['metier']=$id_user['metier'];
+
+		}
+
+	}
+
+	return $users;
+}
+function get_technicien_from_projet($id_projet){
+	$id_users = db_select('SELECT id_user, metier FROM link_projet_user WHERE role=2 && id_projet='.$id_projet);
+	$users=array();
+
+	foreach ($id_users as $id_user){
+        $techniciens=db_select('SELECT * FROM users_bap WHERE id='.$id_user['id_user']);
+        foreach ($techniciens as $user){
+            $id_technicien=$user["id"];
+            $users[$id_technicien]=$user;
+            $users[$id_technicien]['metier']=$id_user['metier'];
+        }
+
+	}
+
+
+	return $users;
+}
 ?>
