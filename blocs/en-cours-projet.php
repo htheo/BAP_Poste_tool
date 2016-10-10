@@ -110,15 +110,13 @@ echo '<div class="listing_projet">
         echo '<div class="cycle">
             <h2>Créer votre nouveau cycle</h2>
             <form action="../admin.php?action=insert&panel=edit-cycle" method="post">
-                <input type="text" name="name" placeholder="Titre du cycle">
+                <input class="input_cycle" type="text" name="name" placeholder="Titre du cycle" required>
                 <input type="hidden" name="id_projet" value="'.$donnees_projet[0]['id'].'">
-                <textarea type="text" name="resume" placeholder="Brief du cycle">
+                <textarea type="text" name="resume" placeholder="Brief du cycle" rows="4" required></textarea>
                 
-                </textarea>
-                
-                <input type="text" name="important" placeholder="Information importante sur un gros changement !">
-                <input type="text" name="positif" placeholder="Points positifs de ce cycle">
-                <input type="text" name="negatif" placeholder="Points négatis de ce cycle">
+                <input class="input_cycle" type="text" name="important" placeholder="Information importante sur un gros changement !">
+                <input class="input_cycle" type="text" name="positif" placeholder="Points positifs de ce cycle">
+                <input class="input_cycle" type="text" name="negatif" placeholder="Points négatis de ce cycle">
                 
                 ';
         $competences = get_competences();
@@ -129,15 +127,17 @@ echo '<div class="listing_projet">
 
         }
         echo '<p>Taches à réaliser pour ce cycle</p>';
-        for($j=1;$j<=5;$j++){
-            echo '<input type="text" name="tache[]" placeholder="Tache n°'.$j.' à réaliser">';
+        for($j=1;$j<=2;$j++){
+            echo '<input class="input_cycle tache" type="text" id="'.$j.'" name="tache[]" placeholder="Tache n°'.$j.' à réaliser">';
         }
         echo '
-               <label for="date_debut">Date de début</label><input id="date_debut" type="date" name="date_debut" value="'.date("Y-m-d").'">
-               <label for="date_fin">Date de fin</label><input id="date_fin" type="date" name="date_fin" value="'.date("Y-m-d").'">
+              
+               <div class="date"><div class="datee"><label for="date_debut">Date de début : </label></div><input class="input_cycle" id="date_debut" type="date" name="date_debut" value="'.date("Y-m-d").'">
+               <br>
+               <div class="datee"><label for="date_fin">Date de fin : </label></div><input id="date_fin" type="date" name="date_fin" value="'.date("Y-m-d").'"></div>
             
 
-        <input type="submit" value="Créer votre cycle">
+        <input  class="submit_cycle" type="submit" value="Créer votre cycle">
         </form>
         </div>';
     }
@@ -147,7 +147,28 @@ echo '<div class="listing_projet">
 
 
 echo '</div>';
+?>
+    <script>
+        function create(idd){
+            id=idd+1;
+            console.log(id);
+            if (($("#"+id).length > 0)){
 
+            }else{
+                console.log('yeah');
+                $("#"+idd).after('<input onchange="create('+id+')" class="input_cycle tache" type="text" id="'+id+'" name="tache[]" placeholder="Tache n°'+id+' à réaliser">');
+
+            }
+        };
+        $('.tache').on('click', function(){
+            idd=parseInt($(this).attr('id'));
+            create(idd);
+
+
+        });
+    </script>
+<?php
 
 }
+
 ?>

@@ -281,6 +281,52 @@ th {
 
 }
 
+.listing_projet textarea {
+    font-size:1em;
+    padding: 1%;
+    margin: 5px 0 2px 0;
+    width: 90%;
+    text-rendering: auto;
+    color: gray;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+}
+.date {
+    margin: 2% 0 2% 0;
+}
+.datee{
+    width: 20%;
+    display: inline-block;
+}
+.date input{
+    width: 30%;
+
+}
+
+.cycle h2 {
+    text-align: center;
+}
+.cycle form {
+    padding-left: 5%;
+}
+.input_cycle{
+    font-size:1em;
+    padding: 1%;
+    width: 90%;
+}
+.submit_cycle {
+    cursor: pointer;
+    font-size: 3em;
+    width: 80%;
+    margin-left: 7%;
+    height: 30px;
+}
+
                 /* Home Poste */
 
 .home_poste {
