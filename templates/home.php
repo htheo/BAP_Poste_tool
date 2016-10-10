@@ -22,7 +22,24 @@ include 'blocs/nav.php';
                 }
                 break;
             case 'suivi-projet.php':
-                include 'blocs/suivi-projet.php'
+                if($level<=3){
+                    $statut_bap=$donnees_projet[0]['statut'];
+                    switch ($statut_bap){
+                        case 'start':
+                            include 'blocs/start-projet.php';
+                            break;
+                        case 'en_cours':
+                            include 'blocs/en-cours-projet.php';
+                            break;
+                        case 'recettage':
+                            break;
+                        case 'fini':
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
                 break;
             default:
                 $tab_alerte['error']="Page inexistante";
