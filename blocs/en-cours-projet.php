@@ -19,17 +19,17 @@ echo '<div class="listing_projet">
                 echo '<div class="cycle cycle_fini">';
             }
             echo '
-            <h2>'.$select_cycle_fini["name"].' - '.$select_cycle_fini["date_debut"].' '.$select_cycle_fini["date_fin"].'</h2>
+            <h2>'.$select_cycle_fini["name"].' - '.date("d-m-Y", strtotime($select_cycle_fini["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_fini["date_debut"])).'</h2>
             <p>'.$select_cycle_fini["resume"].'</p>';
             if($select_cycle_fini["important"]!=""){
-                echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p>';
+                echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p><br>';
             }
-            if($level<=1){
+            if($level==1){
                 if($select_cycle_fini["positif"]!=""){
-                    echo ' <img src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["positif"].'</p>';
+                    echo ' <img src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["positif"].'</p><br>';
                 }
                 if($select_cycle_fini["negatif"]!=""){
-                    echo ' <img src="../../img/negatif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["negatif"].'</p>';
+                    echo ' <img src="../../img/negatif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["negatif"].'</p><br>';
 
                 }
             }
@@ -48,10 +48,23 @@ echo '<div class="listing_projet">
 
             echo '
             
-            <h3>Ce cycle est terminé</h3>
+            
            
 
             </div>';
+            if($select_cycle_fini["important"]!=""){
+                echo'
+                <div class="statut statut_important">
+                    <h4>Ce cycle est terminé avec une information importante</h4>
+                </div>';
+            }else{
+                echo'
+                <div class="statut">
+                    <h4>Ce cycle est terminé</h4>
+                </div>';
+            }
+
+
         }
     }
 
@@ -63,13 +76,12 @@ echo '<div class="listing_projet">
         $competences_cycle_fini=get_competences_from_cycle($select_cycle_en_cours["id"]);
         $taches_cycle_fini=get_taches_from_cycle($select_cycle_en_cours["id"]);
 
-        echo '<div class="cycle cycle_en_cours">
-            <h2>'.$select_cycle_en_cours["name"].' - '.$select_cycle_en_cours["date_debut"].' '.$select_cycle_en_cours["date_fin"].'</h2>
+        echo '<div class="cycle cycle_en_cours">'.date("d-m-Y", strtotime($select_cycle_en_cours["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_en_cours["date_fin"])).'</h2>
             <p>'.$select_cycle_en_cours["resume"].'</p>';
             if($select_cycle_en_cours["important"]!=""){
                 echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p><br>';
             }
-        if($level<=1){
+        if($level==1){
             if($select_cycle_en_cours["positif"]!=""){
 
                 echo ' <img src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["positif"].'</p><br>';
@@ -97,7 +109,10 @@ echo '<div class="listing_projet">
                 <input type="hidden" name="id_cycle" value="'.$select_cycle_en_cours["id"].'">
                 <input type="submit" value="Valider le cycle">
             </form>
-
+               
+        </div>
+        <div class="statut statut_en_cours">
+           <h4>Ce cycle est en cours</h4>
         </div>';
         echo'<p>Vous devez valider un cycle pour en créer un nouveau</p>';
 
@@ -106,7 +121,7 @@ echo '<div class="listing_projet">
 
 
 
-    }else{                              //créer votre nouveau cycle
+    }else if($level==1){                              //créer votre nouveau cycle
         echo '<div class="cycle">
             <h2>Créer votre nouveau cycle</h2>
             <form action="../admin.php?action=insert&panel=edit-cycle" method="post">

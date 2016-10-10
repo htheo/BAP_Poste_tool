@@ -3,7 +3,6 @@ include 'blocs/header-start.php';
 include 'blocs/nav-accueil.php';
 include 'blocs/nav.php';
 
-
     if(isset($donnees_url)){
         if(isset($id)){
             $id_user_admin=db_select('SELECT role FROM link_projet_user WHERE id_projet='.$donnees_projet[0]['id'].' && id_user='.$id);

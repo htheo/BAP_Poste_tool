@@ -3,7 +3,10 @@ if(isset($_SESSION['pseudo'])||isset($pseudo)){
 	if(isset($_GET['panel'])){
 		switch ($_GET['panel']) {
 			case 'connexion':
-				include 'blocs/dashboard.php';
+
+                if($level==1){
+                    include('blocs/dashboard.php');
+                }
 				break;
 			
 			default:
@@ -11,8 +14,12 @@ if(isset($_SESSION['pseudo'])||isset($pseudo)){
 				break;
 		}
 	}else{
-		
-		include('blocs/dashboard.php');
+		if($level==1){
+            include('blocs/dashboard.php');
+        }else if ($level==2){
+
+        }
+
 	}
 
 

@@ -39,6 +39,7 @@ foreach ($tab_url_barre as $key => $value) {  // boucle pour prendre toutes les 
         }
         $i++;
     }else if($value=='BAP-tools'){
+        $nom_domaine_root=$value;
         $nom_domaine=true;
     }
 }

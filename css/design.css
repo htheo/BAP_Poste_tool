@@ -233,12 +233,39 @@ th {
 }
                 /* liste des cycles */
 .cycle {
-    border: 1px solid black;
+    border-left: 1px solid #398b6f;
     padding: 2%;
     width:60%;
-    margin: 1% auto 1% auto;
+    margin: 2% auto 0 auto;
     text-align: left;
     overflow-y: scroll;
+}
+.statut {
+    border-left: 1px solid #398b6f;
+    width:64%;
+    margin: auto;
+    text-align: left;
+    overflow-y: scroll;
+}
+.statut_en_cours {
+    border-left: 2px solid #31758b;
+}
+.statut_important {
+    border-left: 2px solid #993b3b;
+
+}
+.statut h4 {
+    margin: 0;
+    padding:2%;
+    color: rgb(245,245,245);
+    background-color: #398b6f;
+    width: 40%;
+}
+.statut_en_cours h4 {
+    background-color: #31758b;
+}
+.statut_important h4 {
+    background-color: #993b3b;
 }
 .cycle img {
     height: 2em;
@@ -257,10 +284,10 @@ th {
     max-height: 200px;
 }
 .cycle_en_cours {
-    border: 2px solid #5474FF;
+    border-left: 2px solid #31758b;
 }
 .important {
-    border: 2px solid #ff7d79;
+    border-left: 2px solid #993b3b;
 }
 .bandeau_cycle {
     margin-top: 2%;
