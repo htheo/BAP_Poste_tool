@@ -19,7 +19,7 @@ echo '<div class="listing_projet">
                 echo '<div class="cycle cycle_fini">';
             }
             echo '
-            <h2>'.$select_cycle_fini["name"].' - '.date("d-m-Y", strtotime($select_cycle_fini["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_fini["date_debut"])).'</h2>
+            <h2>'.$select_cycle_fini["name"].' - '.convertir_date($select_cycle_fini["date_debut"]).' => '.convertir_date($select_cycle_fini["date_fin"]).'</h2>
             <p>'.$select_cycle_fini["resume"].'</p>';
             if($select_cycle_fini["important"]!=""){
                 echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p><br>';
@@ -76,7 +76,7 @@ echo '<div class="listing_projet">
         $competences_cycle_fini=get_competences_from_cycle($select_cycle_en_cours["id"]);
         $taches_cycle_fini=get_taches_from_cycle($select_cycle_en_cours["id"]);
 
-        echo '<div class="cycle cycle_en_cours"><h2>'.$select_cycle_en_cours["name"].' - '.date("d-m-Y", strtotime($select_cycle_en_cours["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_en_cours["date_fin"])).'</h2>
+        echo '<div class="cycle cycle_en_cours"><h2>'.$select_cycle_en_cours["name"].' - '.convertir_date($select_cycle_en_cours["date_debut"]).' => '.convertir_date($select_cycle_en_cours["date_fin"]).'</h2>
             <p>'.$select_cycle_en_cours["resume"].'</p>';
             if($select_cycle_en_cours["important"]!=""){
                 echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["important"].'</p><br>';

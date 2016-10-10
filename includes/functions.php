@@ -195,4 +195,30 @@ function get_taches_from_cycle($id_cycle){
 	}
 	return $taches;
 }
+function convertir_date($date,$afficher_annee=0){//option=1 on garde l'année
+
+	list($comm_an, $comm_mo, $comm_jo) = explode('-', $date);
+	if($date=="0000-00-00"){
+		return "date manquante";
+	}
+	elseif ($comm_jo<10) {
+		if ($comm_jo=="01") $comm_jo="1er";
+		else ($comm_jo=$comm_jo[1]);
+	}
+
+	if ($comm_mo == "1") $comm_mo="janvier";
+	if ($comm_mo == "2") $comm_mo="fevrier";
+	if ($comm_mo == "3") $comm_mo="mars";
+	if ($comm_mo == "4") $comm_mo="avril";
+	if ($comm_mo == "5") $comm_mo="mai";
+	if ($comm_mo == "6") $comm_mo="juin";
+	if ($comm_mo == "7") $comm_mo="juillet";
+	if ($comm_mo == "8") $comm_mo="aout";
+	if ($comm_mo == "9") $comm_mo="septembre";
+	if ($comm_mo == "10") $comm_mo="octobre";
+	if ($comm_mo == "11") $comm_mo="novembre";
+	if ($comm_mo == "12") $comm_mo="décembre";
+	if ($afficher_annee) return $comm_jo.' '.$comm_mo.' '.substr($comm_an,2,4);
+	else return $comm_jo.' '.$comm_mo.' '.$comm_an;
+}
 ?>

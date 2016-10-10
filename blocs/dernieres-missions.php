@@ -7,7 +7,7 @@
         $competences_cycle_fini=get_competences_from_cycle($select_cycle_en_cours["id"]);
         $taches_cycle_fini=get_taches_from_cycle($select_cycle_en_cours["id"]);
 
-        echo '<div class="cycle cycle_en_cours"><h2>'.$select_cycle_en_cours["name"].' - '.date("d-m-Y", strtotime($select_cycle_en_cours["date_debut"])).' => '.date("d-m-Y", strtotime($select_cycle_en_cours["date_fin"])).'</h2>
+        echo '<div class="cycle cycle_en_cours"><h2>'.$select_cycle_en_cours["name"].' - '.convertir_date($select_cycle_en_cours["date_debut"]).' => '.convertir_date($select_cycle_en_cours["date_fin"]).'</h2>
             <p>'.$select_cycle_en_cours["resume"].'</p>';
 
         if($level==1){
