@@ -3,7 +3,11 @@ if (isset($pseudo) && isset($donnees_projet[0])){
     ?>
 
     <div class="start-projet">
-        <h2>A propos du projet</h2>
+        <div class="bandeau_cycle">
+            <h1>A propos du projet</h1>
+            <a href="projet-en-cours.php"><img src="../../img/arrow.svg" alt="fleche" title="voir les cycles"></a>
+        </div>';
+
 
         <form action="../admin.php?action=update&panel=edit-start-projet-v" name="start-form" method="post" enctype="multipart/form-data">
             <div class="input-group fileUpload">

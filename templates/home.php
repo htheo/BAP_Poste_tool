@@ -30,10 +30,21 @@ include 'blocs/nav.php';
                 }
                 break;
             case 'start-projet.php':
-                include 'blocs/start-projet.php';
+                if($level<=3) {
+                    $statut_bap = $donnees_projet[0]['statut'];
+
+                    include 'blocs/start-projet.php';
+                }
+
                 break;
             case 'projet-en-cours.php':
-                include 'blocs/en-cours-projet.php';
+                if($level<=3) {
+                    $statut_bap = $donnees_projet[0]['statut'];
+                    $select_cycles_fini = db_select('SELECT * FROM cycles_bap WHERE statut="fini" && id_projet=' . $donnees_projet[0]["id"]);
+                    $select_cycles_en_cours = db_select('SELECT * FROM cycles_bap WHERE statut="en_cours" && id_projet=' . $donnees_projet[0]["id"]);
+
+                    include 'blocs/en-cours-projet.php';
+                }
                 break;
             case 'suivi-projet.php':
                 if($level<=3){
