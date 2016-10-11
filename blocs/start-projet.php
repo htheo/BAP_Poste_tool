@@ -9,17 +9,21 @@ if (isset($pseudo) && isset($donnees_projet[0])){
             <div class="input-group fileUpload">
                 <span>Enregister le cahier des charges</span>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-                <input type="file" id="uploadBtn" class="upload" name="cdc" accept=".doc,.docx, .pdf, .txt, .pages, .odt">
+                <input type="file" id="uploadBtn" class="upload" name="cdc" accept=".doc,.docx, .pdf, .txt, .pages, .odt" required>
             </div>
             <input id="uploadFile" placeholder="Choisissez un fichier" disabled="disabled" />
 
             <div class="input-group">
                 <label for="pitch">Pitch du projet</label><br>
-                <textarea name="pitch" rows="3"></textarea>
+                <textarea name="pitch" rows="3" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="created_at">Date de début de projet</label><br>
+                <input type="date" id="myDate" name="created_at" required>
             </div>
             <div class="input-group">
                 <label for="deadline">Date de livraison</label><br>
-                <input type="date" name="deadline">
+                <input type="date" id="myDate2" name="deadline" required>
             </div>
             <button type="submit">Valider</button>
         </form>
@@ -28,6 +32,10 @@ if (isset($pseudo) && isset($donnees_projet[0])){
         document.getElementById("uploadBtn").onchange = function () {
             document.getElementById("uploadFile").value = this.value;
         };
+
+        var today = new Date();
+        $('#myDate').val(today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2));
+        $('#myDate2').val(today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2));
     </script>
     <?php
 }
