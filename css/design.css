@@ -233,19 +233,20 @@ th {
 }
                 /* liste des cycles */
 .cycle {
+    cursor: pointer;
     border: 1px solid #398b6f;
     padding: 2%;
     width:60%;
     margin: 2% auto 0 auto;
     text-align: left;
-    overflow-y: scroll;
+    overflow: hidden;
 }
+
 .statut {
     border-left: 1px solid #398b6f;
     width:64%;
     margin: auto;
     text-align: left;
-    overflow-y: scroll;
 }
 .statut_en_cours {
     border-left: 2px solid #31758b;
@@ -261,6 +262,9 @@ th {
     background-color: #398b6f;
     width: 40%;
 }
+.statut p {
+    padding-left: 2%;
+}
 .statut_en_cours h4 {
     background-color: #31758b;
 }
@@ -272,6 +276,9 @@ th {
     display: inline-block;
     vertical-align: middle;
     padding-right: 2%;
+
+}
+.cycle .pad {
     padding-left: 5%;
 }
 .competence {
@@ -282,6 +289,9 @@ th {
 .cycle_fini {
 
     max-height: 200px;
+}
+.cycle_fini:hover {
+    max-height: inherit;
 }
 .cycle_en_cours {
     border: 2px solid #31758b;
@@ -338,9 +348,7 @@ th {
 .cycle h2 {
     text-align: center;
 }
-.cycle form {
-    padding-left: 5%;
-}
+
 .input_cycle{
     font-size:1em;
     padding: 1%;

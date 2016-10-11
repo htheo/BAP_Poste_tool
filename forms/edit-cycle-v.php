@@ -11,7 +11,7 @@ if(isset($pseudo) && $level<=3){
                     $id_cycle=htmlentities($_POST['id_cycle']);
                     $update_cycle=db_update('cycles_bap', array('statut'=>'fini'), array('id'=>$id_cycle));
                     if(isset($update_cycle)){
-                        echo 'Validé ! <script>  window.location.href = "home/suivi-projet.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
+                        echo '<br><br><br><br>Validé ! <script>  window.location.href = "home/suivi-projet.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
 
                     }else{
                         $tab_alerte['error']="Problème d'insertion";
@@ -21,6 +21,19 @@ if(isset($pseudo) && $level<=3){
 
 
 
+                break;
+
+            case 'validation_taches':
+                if(isset($_POST["taches"])){
+                    foreach ($_POST["taches"] as $tache => $id_tache){
+                        db_update('taches', array('statut'=>"fait"), array('id'=>$id_tache));
+                    }
+                    echo '<br><br><br><br>Validé ! <script>  window.location.href = "home/suivi-projet.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
+
+                }else{
+                    $tab_alerte['error']="Problème d'insertion";
+                    include 'blocs/erreur.php';
+                }
                 break;
 
 

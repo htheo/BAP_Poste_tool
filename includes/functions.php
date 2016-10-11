@@ -191,7 +191,9 @@ function get_taches_from_cycle($id_cycle){
 	$id_taches=db_select('SELECT * FROM taches WHERE id_cycle='.$id_cycle);
 	$taches=array();
 	foreach ($id_taches as $id_tache){
-		$taches[]=$id_tache["name"];
+		$taches[$id_tache["id"]]["name"]=$id_tache["name"];
+		$taches[$id_tache["id"]]["statut"]=$id_tache["statut"];
+		$taches[$id_tache["id"]]["id"]=$id_tache["id"];
 	}
 	return $taches;
 }

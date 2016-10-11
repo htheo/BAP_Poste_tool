@@ -22,14 +22,14 @@ echo '<div class="listing_projet">
             <h2>'.$select_cycle_fini["name"].' - '.convertir_date($select_cycle_fini["date_debut"]).' => '.convertir_date($select_cycle_fini["date_fin"]).'</h2>
             <p>'.$select_cycle_fini["resume"].'</p>';
             if($select_cycle_fini["important"]!=""){
-                echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p><br>';
+                echo ' <img class="pad" src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["important"].'</p><br>';
             }
             if($level==1){
                 if($select_cycle_fini["positif"]!=""){
-                    echo ' <img src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["positif"].'</p><br>';
+                    echo ' <img class="pad" src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["positif"].'</p><br>';
                 }
                 if($select_cycle_fini["negatif"]!=""){
-                    echo ' <img src="../../img/negatif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["negatif"].'</p><br>';
+                    echo ' <img class="pad" src="../../img/negatif.svg" alt="icone attention"><p class="competence">'.$select_cycle_fini["negatif"].'</p><br>';
 
                 }
             }
@@ -37,13 +37,20 @@ echo '<div class="listing_projet">
             <h3>Compétences : </h3>';
 
             foreach ($competences_cycle_fini as $competence_cycle_fini=>$value){
-                echo '<img src="../../img/'.$value.'.svg" alt="'.$value.'"><p class="competence">'.$value.'</p><br>';
+                echo '<img class="pad" src="../../img/'.$value.'.svg" alt="'.$value.'"><p class="competence">'.$value.'</p><br>';
             }
 
             echo '<h3>Taches : </h3>';
-
-            foreach ($taches_cycle_fini as $tache_cycle_fini=>$value_tache_cycle_fini){
-                echo '<div class=""><img src="../../img/tache.svg" alt="icone de taches"><p class="competence">'.$value_tache_cycle_fini.'</p> </div>';
+            $nb_taches_nonfaites=0;
+            foreach ($taches_cycle_fini as $tache_cycle_fini){
+                echo '<div class=""><img class="pad" src="../../img/tache.svg" alt="icone de taches"><p class="competence">'.$tache_cycle_fini["name"].'</p>';
+                if($tache_cycle_fini["statut"]=="fait"){
+                    echo '<img class="pad" src="../../img/fait.svg" alt="icone etat tache">';
+                }else{
+                    echo '<img class="pad" src="../../img/pas_fait.svg" alt="icone etat tache">';
+                    $nb_taches_nonfaites++;
+                }
+                echo '</div>';
             }
 
             echo '
@@ -55,14 +62,24 @@ echo '<div class="listing_projet">
             if($select_cycle_fini["important"]!=""){
                 echo'
                 <div class="statut statut_important">
-                    <h4>Ce cycle est terminé avec une information importante</h4>
-                </div>';
+                    <h4>Ce cycle est terminé avec une information importante</h4>';
+
+
             }else{
                 echo'
                 <div class="statut">
-                    <h4>Ce cycle est terminé</h4>
-                </div>';
+                    <h4>Ce cycle est terminé</h4>';
+
             }
+            if($nb_taches_nonfaites>1){
+                echo  '<p> '.$nb_taches_nonfaites.' taches non effectuées pour ce cycle</p>';
+            }else if($nb_taches_nonfaites==1){
+                echo  '<p> '.$nb_taches_nonfaites.' tache non effectuée pour ce cycle</p>';
+            }else{
+
+            }
+
+            echo '</div>';
 
 
         }
@@ -79,15 +96,15 @@ echo '<div class="listing_projet">
         echo '<div class="cycle cycle_en_cours"><h2>'.$select_cycle_en_cours["name"].' - '.convertir_date($select_cycle_en_cours["date_debut"]).' => '.convertir_date($select_cycle_en_cours["date_fin"]).'</h2>
             <p>'.$select_cycle_en_cours["resume"].'</p>';
             if($select_cycle_en_cours["important"]!=""){
-                echo ' <img src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["important"].'</p><br>';
+                echo ' <img class="pad" src="../../img/important.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["important"].'</p><br>';
             }
         if($level==1){
             if($select_cycle_en_cours["positif"]!=""){
 
-                echo ' <img src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["positif"].'</p><br>';
+                echo ' <img class="pad" src="../../img/positif.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["positif"].'</p><br>';
             }
             if($select_cycle_en_cours["negatif"]!=""){
-                echo ' <img src="../../img/negatif.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["negatif"].'</p><br>';
+                echo ' <img class="pad" src="../../img/negatif.svg" alt="icone attention"><p class="competence">'.$select_cycle_en_cours["negatif"].'</p><br>';
 
             }
         }
@@ -95,14 +112,27 @@ echo '<div class="listing_projet">
             <h3>Compétences : </h3>';
 
         foreach ($competences_cycle_fini as $competence_cycle_fini=>$value){
-            echo '<img src="../../img/'.$value.'.svg" alt="'.$value.'"><p class="competence">'.$value.'</p><br>';
+            echo '<img class="pad" src="../../img/'.$value.'.svg" alt="'.$value.'"><p class="competence">'.$value.'</p><br>';
         }
 
         echo '<h3>Taches : </h3>';
+        echo '<form action="../admin.php?action=validation_taches&panel=edit-cycle" method="post">';
+        foreach ($taches_cycle_fini as $tache_cycle_fini){
+            echo '<div><img class="pad" src="../../img/tache.svg" alt="icone de taches"><p class="competence">'.$tache_cycle_fini['name'].'</p>';
 
-        foreach ($taches_cycle_fini as $tache_cycle_fini=>$value_tache_cycle_fini){
-            echo '<div class=""><img src="../../img/tache.svg" alt="icone de taches"><p class="competence">'.$value_tache_cycle_fini.'</p> </div>';
+            if($tache_cycle_fini["statut"]=="en_cours"){
+                echo '
+            <input type="checkbox" name="taches[]" id="'.$tache_cycle_fini["id"].'" value="'.$tache_cycle_fini["id"].'">
+            ';
+            }else{
+                echo '<img src="../../img/fait.svg" alt="icone etat tache">';
+            }
+            echo '</div>';
+
+
         }
+        echo '<input  type="submit" value="Valider les taches sélectionnées">';
+        echo '</form>';
 
         if($level==1){
             echo '
