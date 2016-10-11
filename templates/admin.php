@@ -22,6 +22,11 @@ if (isset($_SESSION['pseudo'])){
 			case 'edit-start-projet-v':
 				include 'forms/edit-start-projet-v.php';
 				break;
+			case 'export-pdf':
+				$bap_users = db_select('SELECT * FROM link_projet_user AS u JOIN users_bap AS b ON b.id=u.id_user  WHERE u.id_projet='.$donnees_projet[0]["id"]);
+				$cycles_fini=db_select('SELECT * FROM cycles_bap WHERE statut="fini" && id_projet='.$donnees_projet[0]["id"]);
+				include 'forms/export-pdf.php';
+				break;
     		default:
     			include 'blocs/default.php';
     			break;
