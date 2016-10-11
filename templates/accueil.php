@@ -14,7 +14,7 @@ if(isset($nom_page_accueil)){
             include 'blocs/accueil.php';
             break;
         case 'listing-projet.php':
-            $projets=db_select('SELECT * FROM projet_BAP');
+            $projets=db_select('SELECT * FROM projet_bap');
             include 'blocs/liste-projet.php';
             break;
         case 'creer-projet.php':
