@@ -7,7 +7,7 @@ if(isset($pseudo) && $level<=3 || $_POST['cdc']){
         switch($_GET['action']){
             
             case 'update':
-                if(isset($_FILES['cdc']) AND isset($_POST['pitch']) AND isset($_POST['deadline'])){
+                if(isset($_FILES['cdc']) AND isset($_POST['pitch']) AND isset($_POST['deadline']) AND isset($_POST['created_at'])){
                     $erreur = "";
                     $extensions_valides = array( 'doc' , 'docx' , 'pdf' , 'odt', 'pages', 'txt' );
                     $extension_upload = strtolower(  substr(  strrchr($_FILES['cdc']['name'], '.')  ,1)  );
@@ -29,13 +29,14 @@ if(isset($pseudo) && $level<=3 || $_POST['cdc']){
                     }
                     $pitch = htmlentities($_POST['pitch']);
                     $deadline=htmlentities($_POST['deadline']);
+                    $created_at=htmlentities($_POST['created_at']);
                     $id = $donnees_projet[0]['id'];
                     echo $id;
 
-                    $update = db_update('projet_bap', array('cdc_link'=>$nom, 'pitch'=>$pitch, 'deadline' => $deadline, 'statut' => 'en_cours'), array('id' => $id));
+                    $update = db_update('projet_bap', array('cdc_link'=>$nom, 'pitch'=>$pitch, 'deadline' => $deadline, 'statut' => 'en_cours', 'created_at' =>$created_at), array('id' => $id));
 
                     if(isset($update)) {
-                        echo 'Validé ! <script>  window.location.href = "admin.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
+                        echo 'Validé ! <script>  window.location.href = "home/suivi-projet.php";</script> <a href="home/suivi-projet.php">Cliquez-ici pour valider</a>';
                     }
                 }else{
                     $nom = NULL;
