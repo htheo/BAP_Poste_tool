@@ -46,7 +46,10 @@ if(isset($pseudo) && $level<=3){
 
                         }
                         foreach ($taches as $tache){
-                            db_insert('taches', array('id_cycle'=>$id_cycle, 'name'=>$tache));
+                            if($tache != ""){
+                                db_insert('taches', array('id_cycle'=>$id_cycle, 'name'=>$tache));
+                            }
+
 
                         }
                     }else {

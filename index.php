@@ -38,7 +38,7 @@ foreach ($tab_url_barre as $key => $value) {  // boucle pour prendre toutes les 
                 break;
         }
         $i++;
-    }else if($value=='BAP_Poste_tool'){
+    }else if($value=='BAP-tools'){
         $nom_domaine=true;
     }
 }
