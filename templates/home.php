@@ -48,6 +48,7 @@ include 'blocs/nav.php';
                             include 'blocs/en-cours-projet.php';
                             break;
                         case 'recettage':
+                            include 'blocs/recettage-projet.php';
                             break;
                         case 'fini':
                             break;

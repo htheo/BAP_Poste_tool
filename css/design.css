@@ -529,9 +529,10 @@ footer {
     text-align: center;
 }
 
-#uploadFile {
+#uploadFile, #uploadFile2 {
     padding: 5px 0px 5px 0px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .fileUpload input.upload {
@@ -556,7 +557,7 @@ footer {
 
 .start-projet input, textarea {
     border: 2px solid #0aa22e;
-    margin-top: 10px;
+    margin-top: 3px;
     width: 100%;
 }
 
@@ -579,6 +580,14 @@ footer {
 .start-projet button[type='submit']:hover {
     cursor: pointer;
     background-color: #4CAF50;
+}
+.recettage {
+    width: 75%;
+    margin: auto;
+    margin-top: 150px;
+}
+.export-icon {
+    background-image: url("../img/storage-drive.png");
 }
 
 

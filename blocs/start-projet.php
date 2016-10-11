@@ -13,6 +13,13 @@ if (isset($pseudo) && isset($donnees_projet[0])){
             </div>
             <input id="uploadFile" placeholder="Choisissez un fichier" disabled="disabled" />
 
+            <div class="input-group fileUpload">
+                <span>Ajouter un planning de Gantt (optionel)</span>
+                <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+                <input type="file" id="uploadBtn2" class="upload" name="gantt" accept=".doc,.docx, .pdf, .txt, .pages, .odt">
+            </div>
+            <input id="uploadFile2" placeholder="Choisissez un fichier" disabled="disabled" />
+
             <div class="input-group">
                 <label for="pitch">Pitch du projet</label><br>
                 <textarea name="pitch" rows="3" required></textarea>
@@ -31,6 +38,10 @@ if (isset($pseudo) && isset($donnees_projet[0])){
     <script type="application/javascript">
         document.getElementById("uploadBtn").onchange = function () {
             document.getElementById("uploadFile").value = this.value;
+        };
+
+        document.getElementById("uploadBtn2").onchange = function () {
+            document.getElementById("uploadFile2").value = this.value;
         };
 
         var today = new Date();
