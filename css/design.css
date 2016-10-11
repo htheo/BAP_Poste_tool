@@ -486,6 +486,92 @@ footer {
     width: 50%;
 }
 
+.start-projet {
+    width: 45%;
+    margin: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.start-projet > h2 {
+    text-align: center;
+}
+
+.start-projet .input-group {
+    padding: 10px 0;
+    width: 100%;
+    margin: auto;
+}
+
+.input-group > label {
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.fileUpload {
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    background-color: chartreuse;
+    padding: 3px 0 5px 0;
+    border: 2px solid #0aa22e;
+    text-align: center;
+}
+
+#uploadFile {
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.fileUpload input:active {
+    background-color: #e4e4e4;
+}
+
+.fileUpload:hover {
+    background-color: #4CAF50;
+}
+
+.start-projet input, textarea {
+    border: 2px solid #0aa22e;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.start-projet input:focus, textarea:focus {
+    border: 2px solid chartreuse;
+}
+
+
+.start-projet input[type='date'] {
+    text-align: center;
+}
+
+.start-projet button[type='submit'] {
+    font-weight: 800;
+    background-color: chartreuse;
+    padding: 6px 19px;
+    border: 2px solid #0aa22e;
+}
+
+.start-projet button[type='submit']:hover {
+    cursor: pointer;
+    background-color: #4CAF50;
+}
 
 
 
