@@ -590,5 +590,17 @@ footer {
     background-image: url("../img/storage-drive.png");
 }
 
+.button-recettage {
+    width: 50%;
+    color: black;
+    border: 2px solid #9662b7;
+    background-color: #eeeeee ;
+    padding: 5px 15px;
+    margin: 5px;
+}
+
+.button-recettage:hover {
+    background-color: #cdcdec;
+}
 
 
