@@ -572,6 +572,14 @@ footer {
     cursor: pointer;
     background-color: #4CAF50;
 }
+.recettage {
+    width: 75%;
+    margin: auto;
+    margin-top: 150px;
+}
+.export-icon {
+    background-image: url("../img/storage-drive.png");
+}
 
 
 
