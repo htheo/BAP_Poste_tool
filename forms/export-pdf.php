@@ -8,7 +8,7 @@ try
     ob_get_clean();
     $html2pdf = new HTML2PDF('P', 'A4', 'fr');
     $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
-    $html2pdf->Output('test.pdf', 'D');
+    $html2pdf->Output('recettage-'.$name_projet.'.pdf', 'D');
 }
 catch(HTML2PDF_exception $e) {
     echo $e;

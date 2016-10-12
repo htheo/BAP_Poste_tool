@@ -6,8 +6,9 @@ if (isset($pseudo) && isset($donnees_projet[0])){
         <div class="bandeau_cycle">
             <h1>A propos du projet</h1>
             <a href="projet-en-cours.php"><img src="../../img/arrow.svg" alt="fleche" title="voir les cycles"></a>
-        </div>';
+        </div>
 
+        <?php if($donnees_projet[0]['statut'] != "start"){ ?>
 
         <form action="../admin.php?action=update&panel=edit-start-projet-v" name="start-form" method="post" enctype="multipart/form-data">
             <div class="input-group fileUpload">
@@ -38,6 +39,10 @@ if (isset($pseudo) && isset($donnees_projet[0])){
             </div>
             <button type="submit">Valider</button>
         </form>
+
+        <?php } else {?>
+            
+        <?php } ?>
     </div>
     <script type="application/javascript">
         document.getElementById("uploadBtn").onchange = function () {
