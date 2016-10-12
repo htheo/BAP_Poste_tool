@@ -40,7 +40,18 @@ if (isset($pseudo) && isset($donnees_projet[0])){
             <button type="submit">Valider</button>
         </form>
 
-        <?php } else {?>
+        <?php } else {  ?>
+        <div style="padding-top: 40px; width: 60%; margin: auto; text-align: left">
+                <span><strong>Cahier des charges: </strong><?php echo $donnees_projet[0]['cdc_link'] ?> </span><br><br>
+                <span><strong>Planning de Gantt: </strong><?php if(isset($donnees_projet[0]['gantt_link'])) {
+                        echo ' '.$donnees_projet[0]['gantt_link'];
+                } else {
+                    echo 'aucun';
+                } ?>
+                </span><br><br>
+                <span><strong>Brief: </strong><?php echo $donnees_projet[0]['pitch'] ?> </span><br><br>
+                <span><strong>Fin de projet: </strong><?php echo $donnees_projet[0]['deadline'] ?> </span><br><br>
+            </div>
 
         <?php } ?>
     </div>

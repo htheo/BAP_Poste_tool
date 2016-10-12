@@ -355,16 +355,20 @@ th {
 
 .input_cycle{
     font-size:1em;
-    padding: 1%;
     width: 90%;
 }
+
+.tache {
+    margin-bottom: 2px;
+}
+
 .submit_cycle {
     cursor: pointer;
-    font-size: 3em;
     width: 80%;
     margin-left: 7%;
     height: 30px;
 }
+
 
                 /* Home Poste */
 
