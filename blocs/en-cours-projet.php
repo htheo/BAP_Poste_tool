@@ -4,7 +4,7 @@ echo '<div class="listing_projet">
 <div class="bandeau_cycle">
     <a href="start-projet.php" class="rotate"><img src="../../img/arrow.svg" alt="fleche" title="voir l\'étape 1 de préparation"></a>
     <h1>Projet en développement - Liste des cycles</h1>
-    <a href=""><img src="../../img/arrow.svg" alt="fleche" title="voir le recettage"></a>
+    <a href="recettage.php"><img src="../../img/arrow.svg" alt="fleche" title="voir le recettage"></a>
 </div>';
 // on récupère les cycle et on les affiche et on peut les modifier
 

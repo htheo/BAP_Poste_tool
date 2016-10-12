@@ -275,7 +275,6 @@ th {
     height: 2em;
     display: inline-block;
     vertical-align: middle;
-    padding-right: 2%;
 
 }
 .cycle .pad {
@@ -288,10 +287,8 @@ th {
 }
 .cycle_fini {
 
-    max-height: 200px;
 }
 .cycle_fini:hover {
-    max-height: inherit;
 }
 .cycle_en_cours {
     border: 2px solid #31758b;
@@ -318,6 +315,13 @@ th {
 
 }
 
+@keyframes spin { 100% { transform:rotate(360deg); transform-origin: 50% 50%; } }
+
+.tourne {
+    padding-left: 0;
+    animation:spin 6s linear infinite;
+
+}
 .listing_projet textarea {
     font-size:1em;
     padding: 1%;

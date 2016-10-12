@@ -46,6 +46,12 @@ include 'blocs/nav.php';
                     include 'blocs/en-cours-projet.php';
                 }
                 break;
+            case 'recettage.php':
+                if($level<=3) {
+                    include 'blocs/recettage-projet.php';
+                }
+
+                break;
             case 'suivi-projet.php':
                 if($level<=3){
                     $statut_bap=$donnees_projet[0]['statut'];

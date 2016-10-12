@@ -7,6 +7,13 @@ include 'blocs/nav.php';
 
 if (isset($_SESSION['pseudo'])){
 	$acces=true;
+	if(isset($id)){
+		$id_user_admin=db_select('SELECT role FROM link_projet_user WHERE id_projet='.$donnees_projet[0]['id'].' && id_user='.$id);
+
+		if(isset($id_user_admin[0])){
+			$level=$id_user_admin[0]['role'];
+		}
+	}
 
     if(isset($_GET['panel'])){
     	switch($_GET['panel']){

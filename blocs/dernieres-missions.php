@@ -29,8 +29,15 @@
 
         echo '<h3>Taches : </h3>';
 
-        foreach ($taches_cycle_fini as $tache_cycle_fini=>$value_tache_cycle_fini){
-            echo '<div class=""><img src="../img/tache.svg" alt="icone de taches"><p class="competence">'.$value_tache_cycle_fini.'</p> </div>';
+        foreach ($taches_cycle_fini as $tache_cycle_fini){
+            echo '<div><img class="pad" src="../img/tache.svg" alt="icone de taches"><p class="competence">'.$tache_cycle_fini['name'].'</p>';
+
+            if($tache_cycle_fini["statut"]=="en_cours"){
+                echo '<img class="tourne" src="../img/en_cours.svg" alt="icone etat tache">';
+            }else{
+                echo '<img src="../img/fait.svg" alt="icone etat tache">';
+            }
+            echo '</div>';
         }
 
         echo '</div>
