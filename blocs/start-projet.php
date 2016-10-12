@@ -2,7 +2,7 @@
 if (isset($pseudo) && isset($donnees_projet[0])){
     ?>
 
-    <div class="listing_projet">
+    <div class="listing_projet start">
         <div class="bandeau_cycle">
             <h1>A propos du projet</h1>
             <a href="projet-en-cours.php"><img src="../../img/arrow.svg" alt="fleche" title="voir les cycles"></a>
