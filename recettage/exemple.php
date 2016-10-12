@@ -55,7 +55,7 @@
                     ?>
                     <div class="cycle-pdf" style="width: 100%; border: 1px solid #5544DD; margin-top: 5px; padding: 7px">
                         <h3 style="text-align: center; margin: auto; padding: 0 10%"><?php echo $cycle["name"].' - (du '.convertir_date($cycle["date_debut"]).' au '.convertir_date($cycle["date_fin"]).')' ?></h3>
-                        <p style="position: relative; width: 20%; margin: auto"><?php echo $cycle["resume"] ?></p>
+                        <p style="position: relative; width: 20%; margin: auto; text-align: center"><?php echo $cycle["resume"] ?></p>
                         <br>
                         <div class="taches" style="width: 80%; margin: auto">
                             <span><strong>Tâches effectuées:</strong></span>
@@ -68,7 +68,14 @@
                                     }
                                 ?>
                             </ul>
+                            <span><strong>Notes de cycle:</strong></span>
+                            <ul>
+                                <li> Points positifs: <?php echo $cycle["positif"] ?></li>
+                                <li> Points positifs: <?php echo $cycle["negatif"] ?></li>
+                            </ul>
                         </div>
+                        <br>
+
                     </div>
                     <?php
                 }
