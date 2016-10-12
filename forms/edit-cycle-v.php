@@ -65,6 +65,8 @@ if(isset($pseudo) && $level<=3){
 
 
                         }
+                        echo '<br><br><br><br>Validé ! <script>  window.location.href = "home/suivi-projet.php";</script> <a href="admin.php">Cliquez-ici pour valider</a>';
+
                     }else {
                         $tab_alerte['error']="Problème d'insertion";
                         include 'blocs/erreur.php';
