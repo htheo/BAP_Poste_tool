@@ -527,9 +527,9 @@ footer {
     position: relative;
     overflow: hidden;
     margin: 10px;
-    background-color: chartreuse;
+    background-color: #398b6f;
+    color: white;
     padding: 3px 0 5px 0;
-    border: 2px solid #0aa22e;
     text-align: center;
 }
 
@@ -551,13 +551,7 @@ footer {
     filter: alpha(opacity=0);
 }
 
-.fileUpload input:active {
-    background-color: #e4e4e4;
-}
 
-.fileUpload:hover {
-    background-color: #4CAF50;
-}
 
 .start-projet input, textarea {
     border: 2px solid #0aa22e;
@@ -565,9 +559,7 @@ footer {
     width: 100%;
 }
 
-.start-projet input:focus, textarea:focus {
-    border: 2px solid chartreuse;
-}
+
 
 
 .start-projet input[type='date'] {
