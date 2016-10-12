@@ -49,11 +49,11 @@
             </div>
         </div>
             <div style="width: 100%; margin: auto">
-                <h3>Tâches</h3>
+                <h3>Cycles de travail</h3>
                 <?php
                 foreach ($cycles_fini as $cycle){
                     ?>
-                    <div class="cycle-pdf" style="width: 100%; border: 1px solid #5544DD; padding: 5px">
+                    <div class="cycle-pdf" style="width: 100%; border: 1px solid #5544DD; margin-top: 5px; padding: 7px">
                         <h3 style="text-align: center; margin: auto; padding: 0 10%"><?php echo $cycle["name"].' - (du '.convertir_date($cycle["date_debut"]).' au '.convertir_date($cycle["date_fin"]).')' ?></h3>
                         <p style="position: relative; width: 20%; margin: auto"><?php echo $cycle["resume"] ?></p>
                         <br>
